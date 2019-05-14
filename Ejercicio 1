@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+//
+void cuadrado(int *n)
+{
+	for (int i = 1;i <= *n;i++)
+	{
+		for (int i = 1;i <= *n;i++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
+void main()
+{
+	int n=3;
+	int *lado;
+	
+	lado = &n;
+
+	cuadrado(lado);
+
+	_getch();
+}
