@@ -3,7 +3,7 @@
 
 using namespace std;
 //
-void cuadrado(int *n)
+void DibujaCuadrado(int *n)
 {
 	for (int i = 1;i <= *n;i++)
 	{
@@ -21,7 +21,7 @@ void main()
 	
 	lado = &n;
 
-	cuadrado(lado);
+	DibujaCuadrado(lado);
 
 	_getch();
 }
