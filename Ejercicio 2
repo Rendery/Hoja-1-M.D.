@@ -1,0 +1,32 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+void DibujaCuadrado(int *n,int*fifi)
+{
+	for (int i = 1;i <= *n;i++)
+	{
+		for (int i = 1;i <= *n;i++)
+		{
+			cout << char(*fifi);
+		}
+		cout << endl;
+	}
+}
+void main()
+{
+	int n,fifi2;
+	char fifi;
+	cout << "Numero de caracteres: ";
+	cin >> n;
+
+	cout << "Caracter: ";
+	cin >> fifi;
+	fifi2 = int(fifi);
+	int *lado;
+	int *abajo;
+	lado = &n;
+	abajo = &fifi2;
+
+	DibujaCuadrado(lado,abajo);
+	_getch();
+}
