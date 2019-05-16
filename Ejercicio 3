@@ -1,0 +1,38 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+void DibujaCuadrado(int *n, int *x, int *y, int *c)
+{
+	for (int i = 1;i <= *n;i++)
+	{
+		for (int j = 1;j <= *n;j++)
+		{
+			Console::SetCursorPosition(*x+j, *y+i);
+			cout << char (*c);
+		}
+		cout << endl;
+	}
+}
+int main()
+{
+	int n,x,y,c;
+	int *lado, *corx, *cory,*carr;
+	char car;
+
+	cout << "N: "; cin >> n;
+	cout << "X: "; cin >> x;
+	cout << "Y: "; cin >> y;
+	cout << "caracter: "; cin >> car;
+	c = int(car);
+	
+	lado = &n;
+	corx = &x;
+	cory = &y;
+	carr = &c;
+
+	DibujaCuadrado(lado, corx, cory, carr);
+	_getch();
+}
