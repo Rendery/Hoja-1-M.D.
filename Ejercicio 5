@@ -1,0 +1,49 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+void  DibujaCuadrado(int *lx, int *ly, int *ln)
+{
+	for (int i = 1; i <= *ln; i++)
+	{
+		for (int j = 1; j <= *ln; j++)
+		{
+			Console::SetCursorPosition(*lx+i, *ly+j);
+			cout << "*";
+		}
+	}
+}
+int main()
+{
+	cout << "---casita---";
+
+	int x = 0, y = 0, n = 0;
+	int *lx, *ly, *ln;
+
+	lx = &x;
+	ly = &y;
+	ln = &n;
+	// techo
+	x = 5, y = 0, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+	x = 3, y = 2, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+	x = 7, y = 2, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+	x = 1, y = 4, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+	x = 9, y = 4, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+	// cuerpo
+	x = 1, y = 6, n = 4;
+	DibujaCuadrado(lx, ly, ln);
+	x = 7, y = 6, n = 4;
+	DibujaCuadrado(lx, ly, ln);
+	x = 5, y = 6, n = 2;
+	DibujaCuadrado(lx, ly, ln);
+
+
+	_getch();
+}
