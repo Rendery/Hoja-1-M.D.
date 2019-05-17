@@ -1,0 +1,57 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+using namespace System;
+
+void DibujaRectangulo(int *ancho, int *largo, int *ter, int *tono, int *linex, int *liney)
+{
+	switch (*tono)
+	{
+	case 1:Console::ForegroundColor = ConsoleColor::Red;
+		break;
+	case 2:Console::ForegroundColor = ConsoleColor::Blue;
+		break;
+	case 3:Console::ForegroundColor = ConsoleColor::Yellow;
+		break;
+	case 4:Console::ForegroundColor = ConsoleColor::Green;
+		break;
+	case 5:Console::ForegroundColor = ConsoleColor::Cyan;
+		break;
+	}
+	for (int i = 1; i <= *ancho; i++)
+	{
+		for (int j = 1; j <= *largo; j++)
+		{
+			Console::SetCursorPosition(*linex+i, *liney+j);
+			cout << char(*ter);
+		}
+		cout << endl;
+	}
+}
+int main()
+{
+	int x, y, corx, cory, cara, color;
+	int *ancho, *largo, *ter, *tono, *linex, *liney;
+	char caracter;
+
+	cout << "valor ancho x: "; cin >> x;
+	cout << "valor largo y: "; cin >> y;
+	cout << "caracter: "; cin >> caracter;
+	cout << "cordenada x: "; cin >> corx;
+	cout << "cordenada y: "; cin >> cory;
+	cout << "colores: rojo[1] azul[2] amarillo[3] verde[4] celeste[5]: ";  cin >> color;
+
+	cara = int(caracter);
+
+	ancho = &x;
+	largo = &y;
+	ter = &cara;
+	tono = &color;
+	linex = &corx;
+	liney = &cory;
+
+	DibujaRectangulo(ancho,largo,ter,tono,linex,liney);
+
+	_getch();
+}
