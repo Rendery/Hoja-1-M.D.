@@ -1,0 +1,47 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void EsBisiesto(int *num)
+{
+	if (*num % 4 == 0)
+	{
+		if (*num % 400 == 0)
+		{
+			*num = 1;
+		}
+		else
+		{
+			if (!(*num % 100 == 0))
+			{
+				*num = 1;
+			}
+			else
+			{
+				*num = 0;
+			}
+		}
+	}
+	else
+	{
+		*num = 0;
+	}
+}
+int main()
+{
+	int numero,aux;
+	int *num;
+	num = &numero;
+	cout << "Escriba el numero biciesto: "; cin >> numero;
+	aux = numero;
+	//
+	EsBisiesto(num);
+	//
+	cout << "El año " << aux; 
+	if (numero == 1) { cout << " es Biciesto"; }
+	if (numero == 0) { cout << " NO es Biciesto"; }
+
+	_getch();
+}
+
