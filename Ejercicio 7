@@ -3,23 +3,19 @@
 
 using namespace std;
 
-void thanos(int *num)
+int thanos(int numero)
 {
-	*num = (*num % 10)*1000 + (*num / 10 % 10)*100 + (*num / 100 % 10)*10 + *num / 1000;
+	int thanos;
+	thanos = (numero % 10) * 1000 + (numero / 10 % 10) * 100 + (numero / 100 % 10) * 10 + numero / 1000;
+	return thanos;
 }
 int main()
 {
 	int numero;
-	int *num;
-
-	num = &numero;
 
 	cout << "Ingrese un digito de 4 cifras: "; cin >> numero;
 
-	thanos(num);
-
-	cout << numero;
+	cout << thanos(numero);
 
 	_getch();
 }
-
