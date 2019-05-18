@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void thanos(int *num)
+{
+	*num = (*num % 10)*1000 + (*num / 10 % 10)*100 + (*num / 100 % 10)*10 + *num / 1000;
+}
+int main()
+{
+	int numero;
+	int *num;
+
+	num = &numero;
+
+	cout << "Ingrese un digito de 4 cifras: "; cin >> numero;
+
+	thanos(num);
+
+	cout << numero;
+
+	_getch();
+}
+
