@@ -6,15 +6,18 @@ using namespace std;
 void area(double *radius)
 {
 	*radius = 3.141592*(*radius * *radius);
+	cout << "El area de la circunferencia es de: " << *radius;
 }
 int main()
 {
 	double radio;
 	double *radius;
 	radius = &radio;
-	cout << "Ingrese el radio de la circunferencia: "; cin >> radio;
+	
+	cout << "Ingrese el radio de la circunferencia: "; 
+	cin >> radio;
 	area(radius);
-	cout << "El area de la circunferencia es de: " << radio;
+	
 	_getch();
 }
 
