@@ -1,20 +1,22 @@
 #include <iostream>
 #include <conio.h>
 
+#define pi 3.141592
+
 using namespace std;
 
-void area(double *radius)
+double area(double radio)
 {
-	*radius = 3.141592*(*radius * *radius);
+	double ahre;
+	ahre = pi*(radio * radio);
+	return ahre;
 }
 int main()
 {
 	double radio;
-	double *radius;
-	radius = &radio;
+
 	cout << "Ingrese el radio de la circunferencia: "; cin >> radio;
-	area(radius);
-	cout << "El area de la circunferencia es de: " << radio;
+	
+	cout << "El area de la circunferencia es de: " << area(radio);;
 	_getch();
 }
-
