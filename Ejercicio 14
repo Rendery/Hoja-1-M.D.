@@ -1,0 +1,29 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void intercambiar(int *x,int *y)
+{
+	int aux;
+	aux = *x;
+	*x = *y;
+	*y = aux;
+}
+int main()
+{
+	int Lx,Ly;
+	int *x=&Lx, *y=&Ly;
+
+	cout << "Ingrese el valor de X: "; cin >> Lx;
+	cout << "Ingrese el valor de Y: "; cin >> Ly;
+
+	intercambiar(x,y);
+	
+	cout << "El nuevo valor de X: " << Lx;
+	cout << endl;
+	cout << "El nuevo valor de Y: " << Ly;
+
+	_getch();
+}
+
