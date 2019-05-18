@@ -3,26 +3,26 @@
 
 using namespace std;
 
-void Soles_dolares(double *dine)
+double Soles_dolares(double dine)
 {
-	// 1sol = 0.30 dolares
-	*dine = *dine * 0.30;
+	double dola;
+	dola = dine * 0.30;
+	return dola;
 }
-void Dolares_soles(double *dine)
+double Dolares_soles(double dine)
 {
-	*dine = *dine / 0.30;
+	double sol;
+	sol = dine / 0.30;
+	return sol;
 }
 int main()
 {
-	double dinero;
-	double *dine;
-	dine = &dinero;
-	cout << "Soles: "; cin >> dinero;
+	double dine,nuevo;
 
-	Soles_dolares(dine);
-	cout << "En Dolares " << dinero;
-	cout << endl;
-	Dolares_soles(dine);
-	cout << "En Soles otra vez: " << dinero;
+	cout << "Soles: "; cin >> dine;
+	cout << "En Dolares: " << Soles_dolares(dine) << endl;
+	nuevo = Soles_dolares(dine);
+	cout << "En Soles: " << Dolares_soles(nuevo);
+
 	_getch();
 }
