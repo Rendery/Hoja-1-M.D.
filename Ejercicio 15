@@ -1,0 +1,30 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int factorial(int num)
+{
+	int fact= 1;
+	for (int i = 1; i <= num; i++)
+	{
+		fact = i * fact;
+	}
+	return fact;
+}
+int conbinatorio(int N,int K)
+{
+	int conbi;
+	conbi = factorial(N) / (factorial(K) * factorial(N-K));
+	return conbi;
+}
+int main()
+{
+	int N, K;
+
+	cout << "Ingrese el valor de [N]: "; cin >> N;
+	cout << "Ingrese el valor de [K]: "; cin >> K;
+
+	cout << "Si N=" << N << " y K=" << K << " entonces: Cobinatorio = " << N << "!/(" << K << "!(" << N << "-" << K << ")! = " << conbinatorio(N, K);
+	_getch();
+}
