@@ -1,0 +1,28 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void area_perimetro(double *radius, double *are, double *peri)
+{
+	*are = 3.141592*(*radius * *radius);
+	*peri = 2 * 3.141592 * *radius;
+}
+int main()
+{
+	double radio, area, perimetro;
+	double *radius, *are, *peri;
+
+	radius = &radio;
+	are = &area;
+	peri = &perimetro;
+
+	cout << "Ingrese el radio de la circunferencia: "; cin >> radio;
+
+	area_perimetro(radius,are,peri);
+	
+	cout << "El area de la circunferencia es de: " << area << endl;
+	cout << "El perimetro de la circunferencia es de: " << perimetro;
+
+	_getch();
+}
