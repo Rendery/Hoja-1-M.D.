@@ -5,9 +5,9 @@
 
 using namespace std;
 
-int area(double radio)
+double area(double radio)
 {
-	int ahre;
+	double ahre;
 	ahre = pi * (radio * radio);
 	cout << "El area de la circunferencia es de: " << ahre;
 	return 0;
