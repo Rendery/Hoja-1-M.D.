@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void intercambio(int *n,int *k)
+{
+	int aux;
+	if (*n > *k)
+	{
+		aux = *n;
+		*n = *k;
+		*k = aux;
+	}
+}
+int main()
+{
+	int N, K;
+	int *n, *k;
+
+	n = &N;
+	k = &K;
+
+	cout << "Ingrese el valor de [N]: "; cin >> N;
+	cout << "Ingrese el valor de [K]: "; cin >> K;
+	intercambio(n, k);
+	cout << "valor de [N]: " << N;
+	cout << endl;
+	cout << "valor de [K]: " << K;
+
+	_getch();
+}
+
