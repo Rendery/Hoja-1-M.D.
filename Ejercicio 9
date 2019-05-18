@@ -1,0 +1,47 @@
+#include <iostream>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+bool FechaEsValida(int *day, int *month, int *year)
+{
+	bool valid;
+	//Enero 1	Febrero 2	Marzo 3		Abril 4		Mayo 5		Junio 6		Julio 7		Agosto 8	Setiembre 9		Octubre 10		Noviembre 11	Diciembre 12	 
+	if ((*year >= 0) && (*month >= 1) && (*month <= 12) && (*day >= 1) && (*day <= 31)) // regla general
+	{
+		if ((*year % 4 == 0) && (!(*year % 100 == 0)) && (*year % 400 == 0)) // año biciesto
+		{
+			if (((*month == 1) && (*day <= 31)) || ((*month == 2) && (*day <= 29)) || ((*month == 3) && (*day <= 31)) || ((*month == 4) && (*day <= 31)) || ((*month == 5) && (*day <= 31)) || ((*month == 6) && (*day <= 30)) || ((*month == 7) && (*day <= 31)) || ((*month == 8) && (*day <= 30)) || ((*month == 9) && (*day <= 31)) || ((*month == 10) && (*day <= 30)) || ((*month == 11) && (*day <= 31)) || ((*month == 12) && (*day <= 30))) // regla por dia // biciesto
+			{
+				valid = true;
+			}
+			else {valid = false; }
+		}else
+		if (((*month == 1) && (*day <= 31)) || ((*month == 2) && (*day <= 28)) || ((*month == 3) && (*day <= 31)) || ((*month == 4) && (*day <= 31)) || ((*month == 5) && (*day <= 31)) || ((*month == 6) && (*day <= 30)) || ((*month == 7) && (*day <= 31)) || ((*month == 8) && (*day <= 30)) || ((*month == 9) && (*day <= 31)) || ((*month == 10) && (*day <= 30)) || ((*month == 11) && (*day <= 31)) || ((*month == 12) && (*day <= 30))) // regla por dia
+		{
+			valid = true;
+		}
+		else { valid = false; }
+	}
+	else { valid = false; }
+	return valid;
+}
+int main()
+{
+	int numero, dia, mes, ano;
+	int *day, *month, *year;
+
+	day = &dia;
+	month = &mes;
+	year = &ano;
+
+	cout << "Ingrese fecha: "; cin >> dia >> mes >> ano;
+	
+	bool valid = FechaEsValida(day,month,year);
+	if (valid == true) { cout << "la fecha es correcta"; }
+	if (valid == false) { cout << "la fecha NO es correcta"; }
+
+	_getch();
+}
+
