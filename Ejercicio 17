@@ -1,0 +1,32 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int menor(int x,int y)
+{
+	int minus;
+	if (x <= y){ minus = x; }
+	else{ minus = y; }
+	return minus;
+}
+int mayor(int x,int y)
+{
+	int mayoris;
+	if (x >= y) { mayoris = x; }
+	else { mayoris = y; }
+	return mayoris;
+}
+int main()
+{
+	int x,y;
+
+	cout << "Ingrese el valor de X: "; cin >> x;
+	cout << "Ingrese el valor de Y: "; cin >> y;
+
+	cout << "el menor valor es: " << menor(x, y);
+	cout << endl;
+	cout << "el mayor valor es: " << mayor(x, y);
+	
+	_getch();
+}
