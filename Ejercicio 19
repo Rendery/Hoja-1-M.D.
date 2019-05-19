@@ -16,9 +16,16 @@ int invertir(int numero)
 int main()
 {
 	int numero;
-	cout << "Ingrese el numero: "; 
+	cout << "Ingrese el numero: ";
 	cin >> numero;
-	cout << invertir(numero);
+	if (numero == invertir(numero))
+	{
+		cout << "El numero es Capicua";
+	}
+	else
+	{
+		cout << "El numero NO es Capicua";
+	}
 
 	_getch();
 }
