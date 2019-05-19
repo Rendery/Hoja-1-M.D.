@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int factorial(int num)
+{
+	int fact = 1;
+	for (int i = 1; i <= num; i++)
+	{
+		fact = i * fact;
+	}
+	return fact;
+}
+int division(int N)
+{
+	int conbi;
+	for (int i = 1; i <= N; i++)
+	{
+		((i ∗ 2) + 1, i) / factorial(i);
+
+	}
+	return conbi;
+}
+int main()
+{
+	int N;
+
+	cout << "Ingrese el valor de [N]: "; cin >> N;
+	factorial();
+	
+	_getch();
+}
