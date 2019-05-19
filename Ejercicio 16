@@ -12,22 +12,28 @@ int factorial(int num)
 	}
 	return fact;
 }
-int division(int N)
+int conbinatorio(int N, int K)
 {
 	int conbi;
-	for (int i = 1; i <= N; i++)
-	{
-		((i ∗ 2) + 1, i) / factorial(i);
-
-	}
+	conbi = factorial(N) / (factorial(K) * factorial(N - K));
 	return conbi;
+}
+int serie(int n)
+{
+	int finalserie=0, aux;
+
+	for (int i = 1; i <= n; i++)
+	{
+		aux = conbinatorio((i * 2) + 1, i) / factorial(i);
+		finalserie = aux + finalserie;
+	}
+	return finalserie;
 }
 int main()
 {
-	int N;
-
-	cout << "Ingrese el valor de [N]: "; cin >> N;
-	factorial();
-	
+	int n;
+	cout << "Ingrese el valor N: "; cin >> n;
+	cout << endl;
+	cout << "El resultado es: " << serie(n);
 	_getch();
 }
