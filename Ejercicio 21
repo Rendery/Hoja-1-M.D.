@@ -3,12 +3,18 @@
 
 using namespace std;
 
-bool huawei(int n)
+bool ironman(int n)
 {
-	bool num;
+	bool num = true;
 
-	if (n % 2 == 0) { num = true; }
-	else { num = false; }
+	for (int i = 2; i <= n/2; i++)
+	{
+		if (n % i == 0)
+		{
+			num = false;
+		}
+	}
+
 	return num;
 }
 int main()
@@ -17,9 +23,9 @@ int main()
 	cout << "ingrese el numero: "; cin >> num;
 	cout << "el numero " << num;
 
-	if (huawei(num) == true)
-	{cout << " No es primo ";}
-	else { cout << " es primo "; }
+	if (ironman(num) == true)
+	{cout << " es Primo ";}
+	else { cout << " No es primo "; }
 
 	_getch();
 }
