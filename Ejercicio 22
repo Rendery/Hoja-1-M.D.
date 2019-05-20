@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+bool huawei(int n)
+{
+	bool num;
+
+	if (n % 2 == 0) { num = true; }
+	else { num = false; }
+	return num;
+}
+int main()
+{
+	int num;
+	cout << "ingrese el numero: "; cin >> num;
+	cout << "el numero " << num;
+
+	if (huawei(num) == true)
+	{cout << " Es par ";}
+	else { cout << " Es Impar "; }
+
+	_getch();
+}
